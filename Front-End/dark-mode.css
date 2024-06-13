@@ -1,0 +1,401 @@
+
+
+/* Azo Sans Font Face Definition */
+@font-face {
+    font-family: 'AVG';
+    src: url('Fonts/ITC Avant Garde Gothic Bold.otf') format('opentype'); /* TTF format for the font */
+    font-weight: normal; /* Assuming this TTF is the normal weight */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AVGD';
+    src: url('Fonts/ITCAvantGardeStd-Demi.ttf') format('truetype'); /* TTF format for the font */
+    font-weight: normal; /* Assuming this TTF is the normal weight */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ISB';
+    src: url('Fonts/Inter-SemiBold.ttf') format('truetype'); /* TTF format for the font */
+    font-weight: normal; /* Assuming this TTF is the normal weight */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IB';
+    src: url('Fonts/Inter-Bold.ttf') format('truetype'); /* TTF format for the font */
+    font-weight: normal; /* Assuming this TTF is the normal weight */
+    font-style: normal;
+}
+/* Universal settings for all elements to reset margins, padding, and set the box-sizing to ensure elements are sized as expected */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IB', sans-serif; /* Ensures Azo Sans is used throughout, with sans-serif as a fallback */
+}
+
+/* Styles for the body and html elements to ensure they take up the full viewport */
+html, body {
+    width: 100%; /* Ensure full width */
+    min-height: 100vh; /* Minimum height to 100% of the viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background: rgb(34,2,93);
+    background: radial-gradient(circle, rgba(34,2,93,1) 0%, rgba(20,4,51,1) 100%);
+    background-attachment: fixed; /* Optional: to keep the gradient fixed during scrolling */
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+}
+
+
+/* Styles for the header section of the page */
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    padding: 0 50px;
+    font-size: 30px;
+    color: white;
+    border-bottom: 2px solid #d1d2d4;
+    background-image: linear-gradient(to bottom, #674ea7, #a95abf); /* Gradient effect from purple to a lighter purple */
+    overflow: hidden;
+
+}
+
+.header-text {
+    background-image: linear-gradient(to bottom right, #ffffff, #ffffff); /* Gradient for the text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Make the text take the gradient */
+    display: inline; /* Needed to ensure the background only covers the text */
+}
+
+.header {
+    overflow: hidden; /* Hides any content that overflows the header's boundaries */
+}
+
+
+/* Styles for the logo image within the header */
+.logo-img img {
+    max-height: 50%; /* Ensures the image height does not exceed the header */
+    width: auto; /* Keeps the image width proportional to its height */
+    background-color: transparent;
+    border: none;
+    padding: 5px; /* Adds padding around the image to ensure it doesn't touch the borders of the header */
+}
+
+
+/* Styles for the main content area of the page */
+/* Ensuring hero is properly handling its children */
+.hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Flex direction for sidebar container to stack sidebars vertically */
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px; /* Adjust based on your design needs */
+}
+
+
+
+/* Styles for the container holding the graphs */
+.main-graphs {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Styles for individual graph containers */
+.graph, #map {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: 300px;
+    width: 100%;
+    border-radius: 15px;  /* Rounded corners */
+    overflow: hidden;    /* Hides anything outside the border-radius */
+}
+
+
+
+
+/* Styles for the sidebar/telemetry container */
+/* General sidebar styling */
+.sidebar {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for floating effect */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for modern look */
+    color: white; /* Ensures text remains readable */
+    margin-top: 10px; /* Space between other elements */
+}
+
+
+/* Styles for the button sidebar */
+#buttonSidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for floating effect */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners for modern look */
+    color: white; /* Ensures text remains readable */
+    margin-top: 10px; /* Space between other elements */
+}
+
+.button-row {
+    display: flex;
+    align-items: center; /* Ensure vertical alignment */
+    justify-content: space-between; /* Distributes space evenly */
+    margin-bottom: 10px; /* Consistent spacing between rows */
+}
+
+.sidebar-btn {
+    flex-grow: 1; /* Allows main button to grow and fill the space */
+    margin-right: 10px; /* Adds a small gap between the main button and toggle button */
+}
+
+/* Basic styling for all toggle buttons */
+/* Common styles for all toggle buttons */
+/* Common styles for all toggle buttons */
+/* Common styles for all toggle buttons */
+.toggle-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: auto;
+    white-space: nowrap;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Styles for the 'on' state with green gradient */
+.toggle-btn.on, .toggle-btn.on:hover, .toggle-btn.on.pressed {
+    background-image: linear-gradient(to right, #32a852, #6ed396);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.75); /* Persistent green glow */
+    transform: scale(1.05); /* Scale effect to indicate active or hovered state */
+}
+
+/* Styles for the 'off' state with purple gradient */
+.toggle-btn.off {
+    background-image: linear-gradient(to right, #7d2cce, #b172f8);
+}
+
+/* Purple glow on hover for 'off' state */
+.toggle-btn.off:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(150, 0, 150, 0.9); /* More vibrant and brighter purple glow */
+    background-image: linear-gradient(to right, #b172f8, #7d2cce); /* Inverted purple gradient */
+}
+
+
+
+/* Persistent state when 'on' is pressed */
+.toggle-btn.pressed {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.75); /* Bright green glow to indicate it's pressed and active */
+}
+
+
+
+/* Focus effect to improve accessibility */
+.toggle-btn:focus {
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.4); /* Softer focus outline */
+}
+
+
+
+/* Styles for buttons within the button sidebar */
+.sidebar-btn {
+    background-image: linear-gradient(to right, #007BFF, #00BFFF); /* Gradient from nice blue to electric blue */
+    color: white; /* White text for better visibility on blue background */
+    border: none;
+    border-radius: 8px; /* Smooth, rounded corners for a modern look */
+    padding: 10px 20px; /* Padding restored to original thickness */
+    margin-bottom: 10px; /* Space between buttons */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* Smooth transitions */
+    text-align: center;
+    font-weight: bold; /* Bold text for emphasis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: inline-block; /* Necessary for transform to work correctly */
+}
+
+/* Hover effects */
+.sidebar-btn:hover {
+    background-image: linear-gradient(to right, #00BFFF, #007BFF); /* Inverted gradient on hover */
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.75); /* Blue glow */
+    transform: scale(1.05); /* Slightly increase the size of the button */
+}
+
+/* Light Mode Specific Styles */
+
+
+
+
+
+/* Ensure that all text colors and other properties are set appropriately for readability and aesthetic compatibility with light mode */
+
+
+
+
+
+.labels div {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .main-graphs {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        max-width: 100%;
+        order: -1;
+    }
+}
+
+/* Additional utility classes for margins and padding not shown here */
+/* Additional styles for button and command panel styles not shown here */
+/* Progress bar styles not shown here */
+/* Adjustments for telemetry and other labels not shown here */
+/* Styles for displaying labels in a column with space between each */
+.labels {
+    /*  display: flex; /* Uses flexbox layout */
+    /* flex-direction: column; /* Arranges children elements in a vertical column */
+    /* gap: 5px; /* Sets space between each child element */
+    margin-bottom: 10px;
+    font-size: 16px; /* Adjust font size for better readability */
+    padding: 5px; /* Padding inside each label for better visual separation */
+}
+
+/* Command panel layout and style */
+.cmd-panel {
+    display: grid; /* Uses grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns of equal width */
+    grid-gap: 1rem; /* Sets space between grid items */
+    padding: 1rem; /* Adds padding inside the command panel */
+}
+
+/* Styles for buttons within the command panel */
+.cmd-panel button {
+    background-color: #5f5f7a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.cmd-panel button:hover {
+    background-color: #7878a1;
+}
+
+/* Progress bar styling for base and progress value */
+progress[value]::-webkit-progress-bar {
+    background-color: #eee; /* Light gray background color */
+    border-radius: 2px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; /* Inner shadow for depth */
+}
+
+/*progress[value]::-webkit-progress-value {
+    background-color: red; /* Color of the progress indicator */
+/*}
+
+/*progress {
+    -webkit-appearance: none; /* Removes default styling */
+/* appearance: none; /* Ensures consistent look across browsers */
+/* height: 20px; /* Sets the height of the progress bar */
+/* width: 100%; /* Progress bar takes full width of its container */
+/*}
+
+/* Style adjustments for telemetry and other specific labels (Black bars)*/
+#TimeLabel,
+#GPSTime,
+#packetCount,
+#wsMessageCount,
+#Mode,
+#State,
+#HSStatus,
+#PCStatus,
+#RotZ,
+#GPSLatitude,
+#GPSLongitude,
+#VoltageLabel,
+#GPSAltitude,
+#GPSSats,
+#CMDEcho {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for floating effect */
+    padding: 0.5rem; /* Padding inside the label */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 0.5rem; /* Space below each label */
+    color: white; /* Text color */
+}
+
+/* Utility classes for applying margin and padding */
+.mt-1 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+.pt-1 { padding-top: 1rem; }
+.pb-1 { padding-bottom: 1rem; }
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 768px) {
+    .logo-img img {
+        padding: 2px; /* Smaller padding for smaller screens */
+        max-height: 90%; /* Slightly smaller to fit a more compact header */
+    }
+
+    @media (max-width: 768px) {
+        .button-row {
+            flex-direction: column; /* Stacks buttons vertically on small screens */
+        }
+        .sidebar-btn, .toggle-btn {
+            width: 100%; /* Full width for small screens */
+            margin-bottom: 5px; /* Space between stacked buttons */
+        }
+    }
+
+
+
+
+    .main-graphs,
+    .sidebar {
+        width: auto; /* Allows these elements to take full available width */
+        height: auto; /* Height is adjusted to content */
+    }
+
+    .header {
+        flex-direction: column; /* Stacks header child elements vertically */
+        text-align: center; /* Centers the text */
+    }
+
+    .header div {
+        margin-bottom: 1rem; /* Adds space between stacked header elements */
+    }
+}
+
